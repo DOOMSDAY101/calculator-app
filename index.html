@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="jquery-3.6.3.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <main class="container">
+
+    <div class="inner-box">
+
+      
+
+      <div class="theme">
+        <h2>calc</h2>
+        <div class="theme-left">
+          <h3>THEME</h3>
+          <div class="wrapper">
+            <input type="checkbox" name="toggle" class="custom-toggle">
+          </div>
+        </div>
+      </div>
+
+      <!--Theme session ends-->
+      
+      <!--output session begins-->
+
+      <div class="calculator-grid">
+
+        <div class="output">
+          <div class="previous-operand" data-previous-operand></div>
+          <div class="current-operand" data-current-operand></div>
+        </div>
+        <!--output session ends-->
+  
+        <!--input session begins-->
+  
+        <div class="input-session">
+          <div class="number-box">
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button id="del" data-delete>DEL</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>+</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>-</button>
+            <button data-number>.</button>
+            <button data-number>0</button>
+            <button data-operation>/</button>
+            <button data-operation>*</button>
+            <button class="span-two" id="reset" data-reset>RESET</button>
+            <button class="span-two" id="equal" data-equals>=</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!--input session ends-->
+    </div>
+  </main>
+</body>
+<script src="main.js"></script>
+</html>

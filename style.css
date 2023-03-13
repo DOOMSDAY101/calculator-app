@@ -1,0 +1,280 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+body {
+    background-color: hsl(268, 75%, 9%);
+    transition: background-color 0.4s ease-in-out;
+}
+body.white{
+    background-color: hsl(0, 0%, 90%);
+}
+main.container {
+    padding: 20px;
+}
+
+div.inner-box {
+    padding-bottom: 30px;
+    position: relative;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%; 
+}
+div.theme {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+div.theme h2 {
+    color: hsl(52, 100%, 62%);
+    font-size: 2.5rem;
+}
+div.theme h2.black, .theme-left h3.black {
+    color: hsl(60, 10%, 19%);
+}
+.theme-left {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 50px;
+
+}
+.theme-left h3 {
+    color: hsl(52, 100%, 62%);
+    letter-spacing: 3px;
+    font-style: small;
+    font-size: 16px;
+}
+
+.wrapper {
+    position: relative;
+    right: 0%;
+    top: 5px;
+
+}
+.custom-toggle {
+    display: inline-block;
+    user-select: none;
+    position: relative;
+}
+.custom-toggle input {
+    display: none;
+}
+.custom-toggle label {
+    position: relative;
+    display: block;
+    width: 60px;
+    background-color: hsl(268, 71%, 12%);
+    height: 22px;
+    border-radius: 22px;
+    cursor: pointer;
+    transform: background-color 0.4s ease-in-out;
+}
+.custom-toggle label.bg {
+    background-color: hsl(0, 5%, 81%);
+}
+.custom-toggle label::after {
+    position: relative;
+    display: block;
+    content: "";
+    width: 22px;
+    background-color: hsl(176, 100%, 44%);
+    height: 20px;
+    top: 1px;
+    left: 1px;
+    border-radius: 19px;
+    pointer-events: none;
+    transition: all 0.4s ease-in-out;
+}
+.custom-toggle label:active::after {
+    width: 50px;
+}
+.custom-toggle input:checked + label:active::after {
+    left: 10px;
+}
+.custom-toggle input:checked + label::after {
+    left: 37px;
+    background-color: hsl(25, 98%, 40%);
+}
+ div.output {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(52, 100%, 62%); 
+     background-color: hsl(268, 71%, 12%);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    min-height: 120px;
+    transform: background-color 0.4s ease-in-out;
+}
+div.output.screen{ 
+    background-color: hsl(0, 0%, 93%);
+}
+.output .current-operand {
+    color: hsl(52, 100%, 62%);
+    font-size: 2.5rem;
+    transform: color 0.4s ease-in-out;
+}
+.output .current-operand.cur{
+    color: hsl(60, 10%, 19%);
+}
+.output .previous-operand {
+    color: hsl(52, 100%, 30%);
+    font-size: 1.5rem;
+    transform: color 0.4s ease-in-out;
+}
+.output .previous-operand.pre {
+    color: rgba(0,0,0,.50);
+}
+.input-session {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: hsl(268, 71%, 12%);
+    border-radius: 10px;
+    padding: 25px;
+    transform: background-color 0.4s ease-in-out;
+} 
+.input-session.theme2-bg {
+    background-color:hsl(0, 5%, 81%);
+}
+
+div.number-box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 4rem);
+    gap:15px;
+    min-height: 60vh;
+}
+div.number-box button:not(#del, #reset, #equal) {
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    background-color: hsl(268, 47%, 21%);
+    padding: 15px;
+    font-size: 32px;
+    font-weight: 700;
+    color: hsl(52, 100%, 62%);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px  hsl(285, 91%, 52%);
+    text-align: center; 
+    transition: background-color 0.4s ease-in-out;
+    transition: color 0.4s ease-in-out;
+}
+div.number-box button.keys-color:not(#del, #reset, #equal){
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(60, 10%, 19%);
+}
+div.number-box button.keys-color:not(#del, #reset, #equal):hover{
+    background-color: rgba(0,0,0,.5);
+}
+div.number-box button.keys-shadow:not(#del, #reset, #equal) {
+    box-shadow: 0 4px hsl(35, 11%, 61%);
+}
+div.number-box button:not(#del, #reset, #equal):hover {
+    background-color: hsl(290, 70%, 36%);
+}
+#del {
+    font-size: 18px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(281, 89%, 26%);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px  hsl(285, 91%, 52%);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+#del.theme2-del {
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0 4px hsl(185, 58%, 25%);
+}
+#del.theme2-del:hover {
+    background-color: hsl(185, 42%, 50%);
+}
+#del:hover {
+    background-color: hsl(290, 70%, 55%);
+}
+#reset, #equal {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+#reset {
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    box-shadow: 0 4px  hsl(285, 91%, 52%);
+    background-color: hsl(281, 89%, 26%);
+    transition: background-color 0.4s ease-in-out;
+}
+#reset.theme2-del{
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0 4px hsl(185, 58%, 25%);
+}
+#reset.theme2-del:hover {
+    background-color: hsl(185, 42%, 50%);
+}
+#reset:hover {
+    background-color: hsl(290, 70%, 55%);
+}
+#equal {
+    background-color: hsl(176, 100%, 44%);
+    color:  hsl(198, 20%, 13%);
+    box-shadow: 0 4px hsl(177, 92%, 70%);
+    transition: background-color 0.4s ease-in-out;
+}
+#equal:hover {
+   background-color: hsl(176, 100%, 60%);
+   
+}
+#equal.theme2-equal{
+    color: hsl(0, 0%, 93%);
+    background-color: hsl(25, 98%, 40%);
+    box-shadow: 0 4px  hsl(25, 99%, 27%);
+}
+#equal.theme2-equal:hover {
+    background-color: hsl(25, 98%, 60%);
+}
+.span-two {
+    grid-column: span 2;
+}
+@media screen and (min-width: 800px) {
+    div.inner-box {
+        
+        width: 400px;
+        margin: 0 auto;
+    }
+    div.number-box {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        grid-template-columns: repeat(4, 4rem);
+        gap:25px;
+        min-height: 50vh;
+    }
+}
